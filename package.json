@@ -1,0 +1,31 @@
+{
+  "name": "rest-api-mongo-node",
+  "version": "1.0.0",
+  "description": "rest api for cooking",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentPauley/rest-api-mongo-node.git"
+  },
+  "keywords": [
+    "rest",
+    "mongo",
+    "recipes"
+  ],
+  "author": "vincent pauley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VincentPauley/rest-api-mongo-node/issues"
+  },
+  "homepage": "https://github.com/VincentPauley/rest-api-mongo-node#readme"
+}
