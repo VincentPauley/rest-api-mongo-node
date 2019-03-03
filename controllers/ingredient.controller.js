@@ -12,6 +12,20 @@ exports.all_ingredients = function( req, res ) {
     })
 }
 
+exports.find_by_id = function( req, res ) {
+
+    console.log( 'id: ' + req.params.id );
+
+    Ingredient.find({ _id: req.params.id }, function( err, ingredient ) {
+
+        if( err ) {
+            res.send( err )
+        }
+
+        res.send( ingredient )
+    })
+}
+
 exports.add_ingredient = function( req, res ) {
 
     let ingredient = new Ingredient(
