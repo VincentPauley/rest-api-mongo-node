@@ -55,7 +55,7 @@ exports.delete_ingredient = function( req, res ) {
 
     Ingredient.deleteOne({ _id: req.params.id }, function( err ) {
 
-        if( err || 1 ) {
+        if( err ) {
 
             console.log( err ); // << TODO: do some actual logging with this
 
