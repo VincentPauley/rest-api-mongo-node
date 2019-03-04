@@ -9,5 +9,7 @@ router.get( '/list', ingredient_controller.all_ingredients );
 
 router.get( '/id/:id', ingredient_controller.find_by_id );
 
+router.delete( '/:id', ingredient_controller.delete_ingredient );
+
 
 module.exports = router;
