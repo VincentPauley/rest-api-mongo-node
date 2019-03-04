@@ -14,7 +14,7 @@ exports.all_ingredients = function( req, res ) {
 
 exports.find_by_id = function( req, res ) {
 
-    Ingredient.find({ _id: req.params.id }, function( err, ingredient ) {
+    Ingredient.findOne({ _id: req.params.id }, function( err, ingredient ) {
 
         if( err ) {
             res.send( err )
