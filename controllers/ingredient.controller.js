@@ -33,13 +33,17 @@ exports.add_ingredient = function( req, res ) {
         }
     );
 
-    ingredient.save(function( err ) {
+    ingredient.save(function( err, result ) {
 
         if( err ) {
-            res.send( err );
-            return;
+
+            console.log( err ); // < TODO: do something with this error
+
+            return res.status(500)
+                      .send({ message: 'server failed to create new ingredient' });
         }
-        res.send('Product Created successfully');
+
+        res.send({ message: 'successfully created new ingredient', id: result._id });
     })
 }
 
