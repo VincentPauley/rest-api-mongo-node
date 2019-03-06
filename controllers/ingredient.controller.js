@@ -29,9 +29,14 @@ exports.add_ingredient = function( req, res ) {
     let ingredient = new Ingredient(
         {
             name: req.body.name,
-            category: req.body.category 
+            category: req.body.category,
+            description: req.body.description,
+            added_on: new Date().toISOString().substring(0,10),
+            created_by: req.body.created_by,
+            last_modified_by: req.body.last_modified_by
         }
     );
+
 
     ingredient.save(function( err, result ) {
 
