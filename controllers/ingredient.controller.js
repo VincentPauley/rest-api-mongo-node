@@ -12,6 +12,30 @@ exports.all_ingredients = function( req, res ) {
     })
 }
 
+exports.distinct_categories = function( req, res ) {
+
+    Ingredient.find().distinct( "category", function( err, categories ) {
+
+        if( err ) {
+            res.send( err );
+        }
+
+        const allCategories = categories.map( c => c.toLowerCase() )
+
+        // TODO: this should be done via an aggregate query rather than JS here
+        let true_unique = [];
+
+        allCategories.forEach( c => {
+
+            if( true_unique.indexOf( c ) < 0 ) {
+                true_unique.push( c );
+            }
+        });
+
+        res.send( true_unique );
+    })
+}
+
 exports.find_by_id = function( req, res ) {
 
     Ingredient.findOne({ _id: req.params.id }, function( err, ingredient ) {
